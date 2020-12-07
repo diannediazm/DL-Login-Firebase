@@ -8,6 +8,8 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import { firebaseConfig } from "./config/firebaseConfig";
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
@@ -15,6 +17,7 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.config.productionTip = false
 firebase.initializeApp(firebaseConfig);
+Vue.use(ElementUI);
 
 new Vue({
   router,

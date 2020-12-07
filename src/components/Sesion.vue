@@ -3,7 +3,7 @@
         <b-form @submit.prevent="login">
         <b-form-group
             id="input-group-1"
-            label="Usuario"
+            label="Correo electrónico"
             label-for="input-1"
         >
             <b-form-input
@@ -11,7 +11,7 @@
             v-model="form.email"
             type="email"
             required
-            placeholder="Escribe tu usuario"
+            placeholder="Escribe tu correo electrónico"
             ></b-form-input>
         </b-form-group>
 
@@ -55,7 +55,19 @@ export default {
                   this.$router.push('/home');
               })
               .catch(error => {
-                  console.error(error);
+                  console.error(error.code);
+                  console.error(error.message);
+                if (error.code == "auth/wrong-password") {
+                    this.$notify.error({
+                    title: 'Error',
+                    message: 'Contraseña inválida'
+                });
+                } else if (error.code == "auth/user-not-found") {
+                    this.$notify.error({
+                    title: 'Error',
+                    message: 'Correo inválido'
+                });
+                } 
               })
           }
           else {

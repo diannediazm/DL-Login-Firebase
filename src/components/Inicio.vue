@@ -4,12 +4,12 @@
       <template #header>¡Hola!</template>
 
       <template #lead>
-       Inicia sesión
+       “Eres lo que haces, no lo que dices que harás.”
       </template>
 
       <hr class="my-4">
 
-      <b-button variant="dark" href="/">Login</b-button>
+      <b-button variant="dark" href="/">Salir</b-button>
     </b-jumbotron>
   </div>
 </template>
