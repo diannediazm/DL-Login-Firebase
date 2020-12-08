@@ -1,5 +1,8 @@
 # login-firebase
 
+¡Hola! 
+El email es user@users.com y la contraseña es 1234567 :)
+
 ## Project setup
 ```
 npm install
