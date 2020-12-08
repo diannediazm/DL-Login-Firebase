@@ -4,19 +4,31 @@
       <template #header>¡Hola!</template>
 
       <template #lead>
-       “Eres lo que haces, no lo que dices que harás.”
+       Hoy es un buen día para programar
       </template>
 
       <hr class="my-4">
 
-      <b-button variant="dark" href="/">Salir</b-button>
+      <b-button variant="dark" href="/" @click="cierre">Salir</b-button>
     </b-jumbotron>
   </div>
 </template>
 
 <script>
+import firebase from 'firebase';
 export default {
   name: 'Inicio',
+  methods: {
+    cierre() {
+      firebase.auth().signOut().then((resp) => {
+          console.log(resp);
+          // Sign-out successful.
+        }).catch((error) => {
+          // An error happened.
+          console.error(error);
+        });
+    }
+  }
   }
 </script>
 
