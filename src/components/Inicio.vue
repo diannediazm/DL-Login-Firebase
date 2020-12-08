@@ -9,7 +9,7 @@
 
       <hr class="my-4">
 
-      <b-button variant="dark" href="/" @click="cierre">Salir</b-button>
+      <b-button variant="dark" @click="cierre">Salir</b-button>
     </b-jumbotron>
   </div>
 </template>
@@ -21,6 +21,7 @@ export default {
   methods: {
     cierre() {
       firebase.auth().signOut().then((resp) => {
+          this.$router.push('/');
           console.log(resp);
           // Sign-out successful.
         }).catch((error) => {
